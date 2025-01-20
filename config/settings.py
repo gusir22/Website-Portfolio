@@ -1,3 +1,4 @@
+# config/settings.py
 """
 Django settings for config project.
 
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
 
     # custom apps
     "pages",
+    "accounts",
 ]
 
 MIDDLEWARE = [
@@ -124,3 +126,6 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Custom User from accounts app
+AUTH_USER_MODEL = "accounts.CustomUser"
