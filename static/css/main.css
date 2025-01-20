@@ -1,1 +1,56 @@
+@import url(
+'https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'
+);
 
+:root {
+    --black: #1C1C1C;
+    --white: white;  /* this white matches the white background of my photoshopped images */
+    --primary: #0A5DBF;  /* blue */
+    --secondary: #3A96C3; /* light blue */
+    --complementary: #DBB02F;  /* gold */
+}
+
+* {
+    font-family: "Poppins", Helvetica, Monaco;
+    box-sizing: border-box;
+    color: var(--black);
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    background: var(--white);
+    color: var(--black);
+    height: 100%;
+}
+
+h1, h4, h2 {
+    margin: 0;
+    margin-left: 50px;
+}
+
+h1 {
+    font-size: 400%;
+    padding-bottom: 0;
+}
+
+#emphasis {
+    color: #0A5DBF;
+}
+
+h4 {
+    font-style: italic;
+    font-size: 250%;
+    text-decoration: underline;
+}
+
+.custom_context_data, .js_object {
+    padding: 0;
+    margin: 0;
+    margin-left: 100px;
+    margin-top: 25px;
+}
+
+.js_object {
+    color: #0A5DBF;
+}
