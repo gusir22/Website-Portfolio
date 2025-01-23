@@ -1,0 +1,7 @@
+aside {
+    height: 100%;
+    width: 30%;
+    border-right-style: solid;
+    border-right-color: var(--black);
+    border-right-width: 3px;
+}
