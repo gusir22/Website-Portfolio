@@ -18,10 +18,18 @@
             <div class="col-12">
                 <div id="nav-container">
                     <ul id="nav">
-                        <li class="nav-link">Home</li>
-                        <li class="nav-link">Contact</li>
-                        <li class="nav-link">About</li>
-                        <li class="nav-link">Portfolio</li>
+                        <li class="nav-item" id="{% if request.path == '/' %}active-nav{% endif %}">
+                            <a href="#" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item" id="{% if request.path == '/contact/' %}active-nav{% endif %}">
+                            <a href="#" class="nav-link">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" id="{% if request.path == '/about/' %}active-nav{% endif %}">About</a>
+                        </li>
+                        <li class="nav-item" id="{% if request.path == '/portfolio' %}active-nav{% endif %}">
+                            <a href="#" class="nav-link">Portfolio</a>
+                        </li>
                     </ul>
                 </div>
             </div>

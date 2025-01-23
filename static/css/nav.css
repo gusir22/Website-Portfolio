@@ -6,6 +6,10 @@
     border-bottom-color: var(--black);
 }
 
+#active-nav {
+    border-top-color: var(--primary);
+}
+
 #nav {
     width: 30%;
     height: 30px;
@@ -17,7 +21,7 @@
     list-style: none; /* Remove default list styling */
 }
 
-.nav-link {
+.nav-item {
     display: flex; /* Use flexbox to align text inside */
     align-items: center; /* Vertically center text inside each nav item */
     justify-content: center; /* Horizontally center text inside each nav item */
@@ -31,9 +35,15 @@
     border-top-width: 3px;
 }
 
-.nav-link:hover {
+.nav-item:hover {
     /* expose hidden top-bar */
-    border-top-color: var(--primary);
-    border-top-width: 3px;
+    border-top-color: gray;
 }
+
+.nav-link, .nav-link:active {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
 
