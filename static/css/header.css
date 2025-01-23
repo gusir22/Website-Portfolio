@@ -12,6 +12,6 @@
 }
 
 #header-subtitle {
-    color: gray;
+    color: var(--primary);
     font-style: italic;
 }
