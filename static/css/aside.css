@@ -7,7 +7,36 @@ aside {
     border-right-width: 3px;
 }
 
-#aside-header {
+.aside-section {
+    margin-bottom: 65px;
+}
+
+.aside-header {
     margin: 0;
+    margin-bottom: 25px;
     padding: 0;
+    font-weight: 400;
+    border-bottom-style: dotted;
+    border-bottom-color: var(--gray);
+    border-bottom-width: 3px;
+}
+
+.section-header {
+    color: var(--primary);
+    font-weight: 400;
+}
+
+#links-list {
+    list-style-type: square;
+    padding-left: 18px;
+}
+
+.links-item {
+    color: var(--primary);
+    padding: 5px 0;
+}
+
+.links-link {
+    color: var(--black);
+    text-decoration: none;
 }
