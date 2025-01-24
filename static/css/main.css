@@ -40,7 +40,7 @@ body {
 }
 
 main {
-    width: 80%;
+    width: 80%; /* correlated to the width of aside in aside.css */
     padding: 3.5% 5%;
 }
 
