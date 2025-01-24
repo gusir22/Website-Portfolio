@@ -40,3 +40,15 @@ aside {
     color: var(--black);
     text-decoration: none;
 }
+
+.skill-header {
+    font-weight: 600;
+    font-size: 105%;
+    color: var(--black);
+}
+
+.skill-level {
+    font-size: 85%;
+    margin-top: 0;
+    color: var(--primary);
+}
