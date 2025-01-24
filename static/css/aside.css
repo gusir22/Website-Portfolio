@@ -1,7 +1,13 @@
 aside {
     height: 100%;
-    width: 30%;
+    width: 20%;
+    padding: 3.5% 2.5%;
     border-right-style: solid;
     border-right-color: var(--black);
     border-right-width: 3px;
+}
+
+#aside-header {
+    margin: 0;
+    padding: 0;
 }

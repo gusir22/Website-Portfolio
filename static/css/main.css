@@ -4,6 +4,7 @@
 @import url("header.css");
 @import url("nav.css");
 @import url("aside.css");
+@import url("home.css");
 
 :root {
     --black: #242124;
@@ -32,13 +33,13 @@ body {
     padding: 2.5% 8%;
 }
 
-.custom_context_data, .js_object {
-    padding: 0;
-    margin: 0;
-    margin-left: 100px;
-    margin-top: 25px;
+#layout {
+    display: flex;
+    flex-wrap: nowrap; /* Ensures no wrapping of items */
+    gap: 0; /* Space between aside and main */
 }
 
-.js_object {
-    color: var(--primary);
+main {
+    width: 80%;
+    padding: 3.5% 5%;
 }
