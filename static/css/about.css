@@ -1,0 +1,35 @@
+#higher-education-section {
+    margin-top: 20px;
+}
+
+#working-experience-section {
+    margin-top: 40px;
+}
+
+.education-card, .work-card {
+    width: 75%;
+    margin-top: 35px;
+    margin-left: 15%;
+    padding-top: 5px;
+    border-top-style: dotted;
+    border-top-width: 3px;
+    border-top-color: gray;
+}
+
+.education-institution, .work-institution {
+    font-style: italic;
+    color: var(--primary);
+}
+
+.education-location, .work-location {
+    margin: 0;
+    font-weight: 500;
+}
+
+.education-timeframe, .work-timeframe {
+    margin: 8px 0;
+}
+
+.work-description {
+    color: gray;
+}

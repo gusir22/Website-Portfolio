@@ -1,3 +1,4 @@
 .portfolio_venv
 db.sqlite3
-pages/__pycache__/
+*.pyc
+__pycache__/
