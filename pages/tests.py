@@ -1,9 +1,14 @@
 # pages/test.py
-from django.test import SimpleTestCase
+from datetime import datetime
+
+from django.core.files.uploadedfile import SimpleUploadedFile
+from django.test import SimpleTestCase, TestCase
 from django.urls import reverse
 
+from education_certificates.models import Certificate
 
-class PagesTests(SimpleTestCase):
+
+class HomePageTests(SimpleTestCase):
     def test_url_exists_at_correct_location(self):
         response = self.client.get("/")
         self.assertEqual(response.status_code, 200)
@@ -13,3 +18,30 @@ class PagesTests(SimpleTestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "pages/home.html")
         self.assertContains(response, "Hello there,")
+
+
+class AboutPageTests(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        test_file = SimpleUploadedFile(
+            name="test_certificate.pdf",
+            content=b"fake certificate content",
+            content_type="application/pdf",
+        )
+
+        cls.certificate = Certificate.objects.create(
+            title="A Certificate Title",
+            institution_name="Harvard",
+            date_earned=datetime(2025, 1, 25),
+            certificate_file=test_file,
+        )
+
+    def test_url_exists_at_correct_location(self):
+        response = self.client.get("/about/")
+        self.assertEqual(response.status_code, 200)
+
+    def test_homepage(self):
+        response = self.client.get(reverse("about"))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "pages/about.html")
+        self.assertContains(response, "Inspect > Element: me")
