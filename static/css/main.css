@@ -43,6 +43,9 @@ body {
 main {
     width: 80%; /* correlated to the width of aside in aside.css */
     padding: 3.5% 5%;
+    border-left-style: solid;
+    border-left-color: var(--black);
+    border-left-width: 3px;
 }
 
 h1, h2, h3, h4, h5, h6 {
