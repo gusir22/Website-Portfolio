@@ -9,7 +9,7 @@
 
 :root {
     --black: #242124;
-    --white: Ivory;  /* this white matches the white background of my photoshopped images */
+    --white: #FAF8F5;  /* this white has a resume background tone */
     --primary: #0A5DBF;  /* blue */
     --secondary: #3A96C3; /* light blue */
     --complementary: #DBB02F;  /* gold */
