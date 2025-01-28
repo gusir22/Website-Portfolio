@@ -149,5 +149,6 @@ if DEBUG:
     # RECAPTCHA_PRIVATE_KEY = env("RECAPTCHA_PRIVATE_KEY")
 
 # Email Settings
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = "gusir22@gmail.com"
 CONTACT_EMAIL = "gusir22@gmail.com"

@@ -1,7 +1,10 @@
 # pages/views.py
+from datetime import datetime
+
 from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
 from django.core.mail import send_mail
+from django.urls import reverse_lazy
 
 from config.settings import DEFAULT_FROM_EMAIL, CONTACT_EMAIL
 from education_certificates.models import Certificate
@@ -31,7 +34,7 @@ class AboutPageView(TemplateView):
 class ContactPageView(FormView):
     template_name = "pages/contact.html"
     form_class = ContactForm
-    success_url = "/contact/"
+    success_url = reverse_lazy("home")
 
     def form_valid(self, form):
         subject = f"Contact Request: {form.cleaned_data['subject']}"
