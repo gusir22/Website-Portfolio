@@ -22,7 +22,7 @@
                             <a href="{% url 'home' %}" class="nav-link">Home</a>
                         </li>
                         <li class="nav-item" id="{% if request.path == '/contact/' %}active-nav{% endif %}">
-                            <a href="#" class="nav-link">Contact</a>
+                            <a href="{% url 'contact' %}" class="nav-link">Contact</a>
                         </li>
                         <li class="nav-item" id="{% if request.path == '/about/' %}active-nav{% endif %}">
                             <a href="{% url 'about' %}" class="nav-link" >About</a>

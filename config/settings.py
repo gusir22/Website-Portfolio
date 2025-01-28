@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 
+    # third-party apps
+    "captcha",
+
     # custom apps
     "pages",
     "accounts",
@@ -136,3 +139,15 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Custom User from accounts app
 AUTH_USER_MODEL = "accounts.CustomUser"
+
+# Captcha Settings Config
+if DEBUG:
+    RECAPTCHA_TESTING = True
+    SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
+#else:
+    # RECAPTCHA_PUBLIC_KEY = env("RECAPTCHA_PUBLIC_KEY")
+    # RECAPTCHA_PRIVATE_KEY = env("RECAPTCHA_PRIVATE_KEY")
+
+# Email Settings
+DEFAULT_FROM_EMAIL = "gusir22@gmail.com"
+CONTACT_EMAIL = "gusir22@gmail.com"
