@@ -21,11 +21,13 @@ class ContactForm(forms.Form):
     company = forms.CharField(
         label="Company",
         max_length=65,
+        required=False,
     )
 
     phone_number = forms.CharField(
         label="Phone Number",
         max_length=12,
+        required=False,
         help_text="Please use the xxx-xxx-xxxx format.",
         validators=[
              RegexValidator(r'\d{3}-\d{3}-\d{4}', "Please enter a valid phone number in the xxx-xxx-xxxx format."),
