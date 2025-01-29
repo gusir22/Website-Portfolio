@@ -28,7 +28,6 @@ class ContactForm(forms.Form):
         label="Company",
         max_length=65,
         required=False,
-        help_text="Name of the company you represent",
         widget=forms.TextInput(attrs={
             "class": "company-input",
         })

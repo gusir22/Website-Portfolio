@@ -74,3 +74,12 @@ small {
     width: 85%;
 }
 
+#are-you-a-robot-container {
+    margin-top: 55px;
+    margin-bottom: 15px;
+}
+
+#are-you-a-robot-container label {
+    display: none; /* Hide captcha label */
+}
+
