@@ -28,6 +28,7 @@ class ContactForm(forms.Form):
         label="Company",
         max_length=65,
         required=False,
+        help_text="Name of the company you represent",
         widget=forms.TextInput(attrs={
             "class": "company-input",
         })
@@ -39,7 +40,7 @@ class ContactForm(forms.Form):
         required=False,
         help_text="Please use the xxx-xxx-xxxx format.",
         validators=[
-             RegexValidator(r'\d{3}-\d{3}-\d{4}', "Please enter a valid phone number in the xxx-xxx-xxxx format."),
+             RegexValidator(r'\d{3}-\d{3}-\d{4}', "Please use xxx-xxx-xxxx format."),
         ],
         widget=forms.TextInput(attrs={
             "class": "phone-number-input",
@@ -49,9 +50,6 @@ class ContactForm(forms.Form):
     contact_email = forms.EmailField(
         label="Email Address",
         help_text="Please enter the email you would like me to reply to.",
-        validators=[
-            RegexValidator(r'^(\w|\.)+@(\w+\.)?\w+\.\w{1,3}$', "Please enter a valid email address.")
-        ],
         widget=forms.EmailInput(attrs={
             "class": "custom-input",
         })

@@ -21,7 +21,6 @@ input, textarea {
     font-style: italic;
     font-weight: 500;
     padding: 8px 0;
-    margin-bottom: 35px;
     transition: border-color 0.3s ease;
 }
 
@@ -35,6 +34,15 @@ textarea {
 /* When input is focused, highlight the border */
 input:focus, textarea:focus {
     border-bottom-color: var(--primary); /* Change to preferred accent color */
+}
+
+small {
+    margin: 0;
+    padding: 0;
+}
+
+.field-error {
+    color: var(--important);
 }
 
 /* The size of each field is determined by the width of its container */

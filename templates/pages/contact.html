@@ -35,12 +35,14 @@
                                 {% endif %}
                             </label>
                             {{ field }}
-                            {% if field.help_text %}
-                                <small class="form-text text-muted">{{ field.help_text }}</small>
+                            <!-- TODO: Complete field errors or help texts -->
+                            {% if field.errors %}
+                                {% for error in field.errors %}
+                                    <small class="field-error">{{ error }}</small>
+                                {% endfor %}
+                            {% elif field.help_text %}
+                                <small class="field-help">{{ field.help_text }}</small>
                             {% endif %}
-                            {% for error in field.errors %}
-                                <p class="text-danger">{{ error }}</p>
-                            {% endfor %}
                         </div>
                     {% endfor %}
 
