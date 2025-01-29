@@ -20,19 +20,32 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <form method="post">
+                <form method="post" novalidate>
                     {% csrf_token %}
-                    {{form.first_name.label_tag}} {{form.first_name}}
-                    {{form.last_name.label_tag}} {{form.last_name}}
-                    {{form.company.label_tag}} {{form.company}}
-                    {{form.phone_number.label_tag}} {{form.phone_number}}
-                    {{form.contact_email.label_tag}} {{form.contact_email}}
-                    {{form.subject.label_tag}} {{form.subject}}
-                    {{form.message.label_tag}} {{form.message}}
-                    {{form.captcha.label_tag}} {{form.captcha}}
 
-                    <button type="submit">Send</button>
-                    <button type="reset">Clear</button>
+                    <!-- Render Form Errors (if any) -->
+                    {{ form.non_field_errors }}
+
+                    <!-- Render Each Field Dynamically -->
+                    {% for field in form %}
+                        <div class="form-group">
+                            <label for="{{ field.id_for_label }}">{{ field.label }}
+                                {% if field.field.required %}
+                                    <span class="required-field">*</span>
+                                {% endif %}
+                            </label>
+                            {{ field }}
+                            {% if field.help_text %}
+                                <small class="form-text text-muted">{{ field.help_text }}</small>
+                            {% endif %}
+                            {% for error in field.errors %}
+                                <p class="text-danger">{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+
+                    <button type="submit" class="btn btn-primary">Send</button>
+                    <button type="reset" class="btn btn-secondary">Clear</button>
                 </form>
             </div>
         </div>
