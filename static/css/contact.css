@@ -1,0 +1,68 @@
+label {
+    display: block;
+    width: 100%;
+}
+
+.required-field {
+    color: var(--important);
+    font-weight: bold;
+    font-size: 115%;
+}
+
+input, textarea {
+    width: 100%;
+    border: none;
+    border-bottom-style: dotted;
+    border-bottom-width: 3px;
+    border-bottom-color: var(--black);
+    background: transparent;
+    outline: none;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 500;
+    padding: 8px 0;
+    margin-bottom: 35px;
+    transition: border-color 0.3s ease;
+}
+
+textarea {
+    /* make font smaller for better readability*/
+    font-size: 18px;
+    font-weight: 400;
+    resize: none;
+}
+
+/* When input is focused, highlight the border */
+input:focus, textarea:focus {
+    border-bottom-color: var(--primary); /* Change to preferred accent color */
+}
+
+/* The size of each field is determined by the width of its container */
+#first-name-container, #last-name-container,
+#company-container, #phone-number-container,
+#email-address-container, #subject-container,
+#message-container {
+    display: inline-block;
+    width: 40%;
+    padding: 0;
+    margin: 30px 0;
+    margin-right: 5%;
+}
+
+#company-container {
+    width: 55%;
+    margin-right: 40%;
+}
+
+#phone-number-container {
+    width: 30%;
+}
+
+#email-address-container {
+    width: 50%;
+}
+
+#message-container {
+    width: 85%;
+}
+

@@ -10,18 +10,27 @@ class ContactForm(forms.Form):
         required=True,
         label="First Name",
         max_length=50,
+        widget=forms.TextInput(attrs={
+            "class": "first-name-input",
+        })
     )
 
     last_name = forms.CharField(
         required=True,
         label="Last Name",
         max_length=50,
+        widget=forms.TextInput(attrs={
+            "class": "last-name-input",
+        })
     )
 
     company = forms.CharField(
         label="Company",
         max_length=65,
         required=False,
+        widget=forms.TextInput(attrs={
+            "class": "company-input",
+        })
     )
 
     phone_number = forms.CharField(
@@ -32,6 +41,9 @@ class ContactForm(forms.Form):
         validators=[
              RegexValidator(r'\d{3}-\d{3}-\d{4}', "Please enter a valid phone number in the xxx-xxx-xxxx format."),
         ],
+        widget=forms.TextInput(attrs={
+            "class": "phone-number-input",
+        })
     )
 
     contact_email = forms.EmailField(
@@ -40,10 +52,26 @@ class ContactForm(forms.Form):
         validators=[
             RegexValidator(r'^(\w|\.)+@(\w+\.)?\w+\.\w{1,3}$', "Please enter a valid email address.")
         ],
+        widget=forms.EmailInput(attrs={
+            "class": "custom-input",
+        })
     )
 
-    subject = forms.CharField(required=True, max_length=75)
+    subject = forms.CharField(
+        required=True,
+        max_length=75,
+        widget=forms.TextInput(attrs={
+            "class": "subject-input",
+        })
+    )
 
-    message = forms.CharField(widget=forms.Textarea, required=True)
+    message = forms.CharField(
+        required=True,
+        widget=forms.Textarea(attrs={
+            "class": "textarea-input",
+            "placeholder": "Write me here!",
+            "rows": 5
+        })
+    )
 
     captcha = ReCaptchaField(label="Are you a robot?")

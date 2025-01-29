@@ -6,12 +6,13 @@
 @import url("aside.css");
 @import url("home.css");
 @import url("about.css");
+@import url("contact.css");
 
 :root {
     --black: #242124;
     --white: #FAF8F5;  /* this white has a resume background tone */
     --primary: #0A5DBF;  /* blue */
-    --secondary: #3A96C3; /* light blue */
+    --important: #BF260A; /* red */
     --complementary: #DBB02F;  /* gold */
 }
 
