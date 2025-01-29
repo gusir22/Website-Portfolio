@@ -35,7 +35,6 @@
                                 {% endif %}
                             </label>
                             {{ field }}
-                            <!-- TODO: Complete field errors or help texts -->
                             {% if field.errors %}
                                 {% for error in field.errors %}
                                     <small class="field-error">{{ error }}</small>
