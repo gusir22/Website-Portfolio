@@ -81,6 +81,17 @@ class ContactPageTests(TestCase):
             "g-recaptcha-response": "PASSED"  # Required for reCAPTCHA validation
         }
 
+        cls.minimal_valid_form_data = {
+            "first_name": "John",
+            "last_name": "Doe",
+            "company": "",
+            "phone_number": "",
+            "contact_email": "johndoe@example.com",
+            "subject": "Inquiry",
+            "message": "I have a question about your services.",
+            "g-recaptcha-response": "PASSED"  # Required for reCAPTCHA validation
+        }
+
         cls.invalid_form_data = {
             "first_name": "John",
             "last_name": "",
@@ -96,11 +107,22 @@ class ContactPageTests(TestCase):
         response = self.client.get("/contact/")
         self.assertEqual(response.status_code, 200)
 
+    def test_contactpage(self):
+        response = self.client.get(reverse("contact"))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "pages/contact.html")
+        self.assertContains(response, "Your Move, Internet Friend")
+
+    def test_contactpage_url_resolves_contactpageview(self):
+        """Tests that the url pattern references the correct view"""
+        view = resolve(reverse("contact"))
+        self.assertEqual(view.func.__name__, ContactPageView.as_view().__name__)
+
     @override_settings(DEFAULT_FROM_EMAIL="admin@example.com", CONTACT_EMAIL="admin@example.com")
     def test_fully_valid_data_redirects_to_correct_location_and_sends_email_notice(self):
-        """Ensures that the form contact success redirects to /contact/success/"""
+        """Ensures that the form contact success redirects to /contact/success/ with all form fields entered"""
         response = self.client.post(reverse("contact"), self.valid_form_data)
-        self.assertEqual(response.status_code, 302)
+        self.assertEqual(response.status_code, 302)  # redirected page
         self.assertEqual(response.url, reverse("contact_success"))
 
         # Check that an email was sent
@@ -115,3 +137,38 @@ class ContactPageTests(TestCase):
         self.assertIn("123-456-7890", email.body)
         self.assertIn("johndoe@example.com", email.body)
         self.assertIn("I have a question about your services.", email.body)
+
+    @override_settings(DEFAULT_FROM_EMAIL="admin@example.com", CONTACT_EMAIL="admin@example.com")
+    def test_minimal_valid_data_redirects_to_correct_location_and_sends_email_notice(self):
+        """Ensures that the form contact success redirects to /contact/success/ with only the minimum required inputs
+        submitted"""
+        response = self.client.post(reverse("contact"), self.minimal_valid_form_data)
+        self.assertEqual(response.status_code, 302)  # redirected page
+        self.assertEqual(response.url, reverse("contact_success"))
+
+        # Check that an email was sent
+        self.assertEqual(len(mail.outbox), 1)
+        email = mail.outbox[0]
+
+        # Validate email content
+        self.assertEqual(email.subject, "Contact Request: Inquiry")
+        self.assertEqual(email.to, ["admin@example.com"])
+        self.assertIn("Doe, John", email.body)
+        self.assertNotIn("ExampleCorp", email.body)  # this field is not present
+        self.assertNotIn("123-456-7890", email.body)  # this field is not present
+        self.assertIn("johndoe@example.com", email.body)
+        self.assertIn("I have a question about your services.", email.body)
+
+    def test_invalid_form_submission_renders_errors(self):
+        """Ensure invalid form submission does not send an email and shows form errors"""
+        response = self.client.post(reverse("contact"), self.invalid_form_data)
+
+        # Ensure the response status is still 200 (form re-renders instead of redirecting)
+        self.assertEqual(response.status_code, 200)
+
+        # Ensure form is returned with errors
+        self.assertIn("form", response.context)
+        self.assertTrue(response.context["form"].errors)
+
+        # Ensure no email was sent
+        self.assertEqual(len(mail.outbox), 0)
