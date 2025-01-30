@@ -3,10 +3,10 @@ from datetime import datetime
 
 from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
+from django.conf import settings
 from django.core.mail import send_mail
 from django.urls import reverse_lazy
 
-from config.settings import DEFAULT_FROM_EMAIL, CONTACT_EMAIL
 from education_certificates.models import Certificate
 
 from .forms import ContactForm
@@ -38,7 +38,7 @@ class ContactPageView(FormView):
 
     def form_valid(self, form):
         subject = f"Contact Request: {form.cleaned_data['subject']}"
-        from_email = DEFAULT_FROM_EMAIL
+        from_email = settings.DEFAULT_FROM_EMAIL
         date = datetime.now()  # Get contact request time
         message = f"""
                 Contact Request
@@ -54,7 +54,7 @@ class ContactPageView(FormView):
                 {form.cleaned_data['message']}
 
                 """
-        send_mail(subject, message, from_email, [CONTACT_EMAIL], fail_silently=False)
+        send_mail(subject, message, from_email, [settings.CONTACT_EMAIL], fail_silently=False)
         return super().form_valid(form)
 
 
