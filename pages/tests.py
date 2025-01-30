@@ -172,3 +172,20 @@ class ContactPageTests(TestCase):
 
         # Ensure no email was sent
         self.assertEqual(len(mail.outbox), 0)
+
+
+class ContactSuccessPageTests(SimpleTestCase):
+    def test_url_exists_at_correct_location(self):
+        response = self.client.get("/contact/success/")
+        self.assertEqual(response.status_code, 200)
+
+    def test_contactsuccesspage(self):
+        response = self.client.get(reverse("contact_success"))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "pages/contact_success.html")
+        self.assertContains(response, "Thank you for reaching out")
+
+    def test_contactsuccesspage_url_resolves_contactsuccessview(self):
+        """Tests that the url pattern references the correct view"""
+        view = resolve(reverse("contact_success"))
+        self.assertEqual(view.func.__name__, ContactSuccessPageView.as_view().__name__)
