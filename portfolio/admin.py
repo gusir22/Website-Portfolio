@@ -28,6 +28,8 @@ class ScreenshotInline(admin.TabularInline):
 
 
 class FeaturedProjectAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('title',)}  # auto-fills the slug field with input from the title field
+
     inlines = [
         ScreenshotInline,
     ]
@@ -53,6 +55,8 @@ admin.site.register(FeaturedProject, FeaturedProjectAdmin)
 
 
 class QuickProjectAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('title',)}  # auto-fills the slug field with input from the title field
+
     list_display = [
         "__str__",
         "date_completed",
