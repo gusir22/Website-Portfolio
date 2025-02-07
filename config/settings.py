@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "pages",
     "accounts",
     "education_certificates",
+    "portfolio",
 ]
 
 MIDDLEWARE = [
