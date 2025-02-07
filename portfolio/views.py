@@ -1,7 +1,7 @@
 # portfolio/views.py
 from django.views.generic import TemplateView
 
-from .models import FeaturedProject
+from .models import FeaturedProject, QuickProject
 
 
 class PortfolioListView(TemplateView):
@@ -12,5 +12,5 @@ class PortfolioListView(TemplateView):
         # query Featured Projects here
         context['featured_projects'] = FeaturedProject.objects.all()
         # query Quick Projects here
-
+        context['quick_projects'] = QuickProject.objects.all()
         return context

@@ -23,6 +23,7 @@
             {% for project in featured_projects %}
                 <h3>{{project.title}}</h3>
                 <p>{{project.description}}</p>
+                <a href="{{project.repository_link}}" target="_blank">Github Link</a>
                 <strong>Date Completed: {{project.date_completed}}</strong>
                 <strong>Date Created: {{project.date_created}}</strong>
                 <img src="{{project.thumbnail.url}}" alt="{{project.title}} thumbnail">
@@ -34,6 +35,19 @@
                 {% for screenshot in project.screenshots.all %}
                     <img src="{{screenshot.image.url}}" alt="{{screenshot.project.title}} screenshot">
                     <small>{{ screenshot.caption }}</small>
+                {% endfor %}
+            {% endfor %}
+
+
+            {% for project in quick_projects %}
+                <h5>{{ project.title }}</h5>
+                <p>{{ project.description }}</p>
+                <a href="{{project.repository_link}}" target="_blank">Github Link</a>
+                <strong>Date Completed: {{project.date_completed}}</strong>
+                <strong>Date Created: {{project.date_created}}</strong>
+                <img src="{{project.thumbnail.url}}" alt="{{project.title}} thumbnail">
+                {% for tech in project.technologies_used_set.all %}
+                    <p>{{ tech.name }}</p>
                 {% endfor %}
             {% endfor %}
         </div>
