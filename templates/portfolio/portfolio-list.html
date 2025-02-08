@@ -19,37 +19,66 @@
                     line of code.
                 </p>
             </div>
-
-            {% for project in featured_projects %}
-                <h3>{{project.title}}</h3>
-                <p>{{project.description}}</p>
-                <a href="{{project.repository_link}}" target="_blank">Github Link</a>
-                <strong>Date Completed: {{project.date_completed}}</strong>
-                <strong>Date Created: {{project.date_created}}</strong>
-                <img src="{{project.thumbnail.url}}" alt="{{project.title}} thumbnail">
-
-                 {% for tech in project.technologies_used_set.all %}
-                    <p>{{ tech.name }}</p>
-                 {% endfor %}
-
-                {% for screenshot in project.screenshots.all %}
-                    <img src="{{screenshot.image.url}}" alt="{{screenshot.project.title}} screenshot">
-                    <small>{{ screenshot.caption }}</small>
-                {% endfor %}
-            {% endfor %}
-
-
-            {% for project in quick_projects %}
-                <h5>{{ project.title }}</h5>
-                <p>{{ project.description }}</p>
-                <a href="{{project.repository_link}}" target="_blank">Github Link</a>
-                <strong>Date Completed: {{project.date_completed}}</strong>
-                <strong>Date Created: {{project.date_created}}</strong>
-                <img src="{{project.thumbnail.url}}" alt="{{project.title}} thumbnail">
-                {% for tech in project.technologies_used_set.all %}
-                    <p>{{ tech.name }}</p>
-                {% endfor %}
-            {% endfor %}
         </div>
+
+        <div class="row">
+            <div id="fp-section" class="col-8">
+                <h2 id="fp-header">Featured Projects</h2>
+
+                <div id="fp-container" class="container">
+                    <div class="row">
+                        {% for project in featured_projects %}
+                            <div class="col-12">
+                                <div class="fp-card" onmouseover="handleMouseOver(this)" onmouseout="handleMouseOut(this)">
+                                    <img class="fp-thumbnail" src="{{project.thumbnail.url}}" alt="{{project.title}} thumbnail">
+                                    <h3 class="fp-title">{{ project.title }}</h3>
+                                    <p class="fp-description">{{project.description}}</p>
+                                    <small class="fp-date">
+                                        <strong>Completed:</strong> {{project.date_completed|date:"M Y"}}
+                                    </small>
+                                    <a class="fp-btn" href="#">See More</a>
+                                    <a class="fp-btn-secondary" href="{{project.repository_link}}" target="_blank">GitHub</a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div id="qp-section" class="col-4">
+                <h2 id="quick-projects-header">Quick Projects</h2>
+
+                <div class="container">
+                    <div class="row">
+                        {% for project in quick_projects %}
+                            <div class="col-12">
+                                <h4>{{ project.title }}</h4>
+
+
+                                <!-- Quick Projects Fields
+
+                                <h5>{{ project.title }}</h5>
+                                <p>{{ project.description }}</p>
+                                <a href="{{project.repository_link}}" target="_blank">Github Link</a>
+                                <strong>Date Completed: {{project.date_completed}}</strong>
+                                <strong>Date Created: {{project.date_created}}</strong>
+                                <img src="{{project.thumbnail.url}}" alt="{{project.title}} thumbnail">
+                                {% for tech in project.technologies_used_set.all %}
+                                    <p>{{ tech.name }}</p>
+                                {% endfor %}
+
+                                -->
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
     </div>
 {% endblock content %}
+
+{% block script %}
+    <script src="{% static 'js/fp-cards.js' %}"></script>
+{% endblock script %}

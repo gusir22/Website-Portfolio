@@ -1,0 +1,50 @@
+#nav-container {
+    display: flex; /* Activate flexbox */
+    justify-content: center; /* Horizontally center the nav */
+    align-items: center; /* Vertically center the nav */
+    border-bottom-style: solid;
+    border-bottom-color: var(--black);
+}
+
+#active-nav {
+    border-top-color: var(--primary);
+}
+
+#nav {
+    width: 30%;
+    height: 30px;
+    padding: 0;
+    padding-bottom: 5px;
+    margin: 0;
+    display: flex; /* Use flexbox for `.nav-link` alignment */
+    justify-content: space-around; /* Distribute `.nav-link` evenly */
+    align-items: center; /* Vertically center the nav */
+    list-style: none; /* Remove default list styling */
+}
+
+.nav-item {
+    display: flex; /* Use flexbox to align text inside */
+    align-items: center; /* Vertically center text inside each nav item */
+    justify-content: center; /* Horizontally center text inside each nav item */
+    height: 100%; /* Make it match the height of the nav */
+    margin: 0;
+    padding: 0 8px;
+
+    /* hidden camouflaged top border to align text when one is hovered over */
+    border-top-style: dotted;
+    border-top-color: var(--white);
+    border-top-width: 3px;
+}
+
+.nav-item:hover {
+    /* expose hidden top-bar */
+    border-top-color: gray;
+}
+
+.nav-link, .nav-link:active {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+

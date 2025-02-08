@@ -1,0 +1,51 @@
+aside {
+    height: 100%;
+    width: 20%;  /* correlated to the width of main in main.css */
+    padding: 3.5% 2.5%;
+}
+
+.aside-section {
+    margin-bottom: 50px;
+}
+
+.aside-header {
+    margin: 0;
+    margin-bottom: 25px;
+    padding: 0;
+    font-weight: 400;
+    border-bottom-style: dotted;
+    border-bottom-color: var(--gray);
+    border-bottom-width: 3px;
+}
+
+.section-header {
+    color: var(--primary);
+    font-weight: 400;
+}
+
+#links-list {
+    list-style-type: square;
+    padding-left: 18px;
+}
+
+.links-item {
+    color: var(--primary);
+    padding: 5px 0;
+}
+
+.links-link {
+    color: var(--black);
+    text-decoration: none;
+}
+
+.skill-header {
+    font-weight: 600;
+    font-size: 105%;
+    color: var(--black);
+}
+
+.skill-level {
+    font-size: 85%;
+    margin-top: 0;
+    color: var(--primary);
+}

@@ -1,0 +1,1 @@
+document.write("<p class='js_object'>This page has custom JavaScript enabled.</p>");
