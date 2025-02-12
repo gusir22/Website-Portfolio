@@ -36,7 +36,8 @@
     border-bottom: 3px dotted var(--primary);
 }
 
-.fp-description, .fp-date, .fp-btn, .fp-btn-secondary {
+.fp-description, .fp-date, .fp-btn, .fp-btn-secondary,
+.tech-list, .tech-badge {
     opacity: 0;                      /* Hidden by default */
     transform: translateY(-10px);    /* Start slightly above */
     max-height: 0;                   /* Collapsed */
@@ -50,7 +51,8 @@
 }
 
 .fp-description-mouseover, .fp-date-mouseover,
-.fp-btn-mouseover, .fp-btn-secondary-mouseover {
+.fp-btn-mouseover, .fp-btn-secondary-mouseover,
+.tech-list-mouseover, .tech-badge-mouseover {
     opacity: 1;
     transform: translateY(0);        /* Slide into place */
     max-height: 200px;               /* Arbitrary max height (adjust if needed) */
@@ -59,4 +61,10 @@
 
 .fp-date {
     display: block;
+}
+
+.tech-badge {
+    height: 30px;
+    width: auto;
+    display: inline;
 }

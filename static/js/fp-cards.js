@@ -19,6 +19,13 @@ function handleMouseOver(container) {
     let button2 = container.querySelector(".fp-btn-secondary");
     button2.classList.add("fp-btn-secondary-mouseover");  // Reveal and slide in button 2
 
+    let techList = container.querySelector(".tech-list");
+    techList.classList.add("tech-list-mouseover");  // Reveal and slide in tech list
+
+    let techBadges = container.querySelectorAll(".tech-badge");
+    techBadges.forEach(badge => {
+        badge.classList.add("tech-badge-mouseover");  // Reveal and slide in each tech badge
+    });
 }
 
 function handleMouseOut(container) {
@@ -41,5 +48,13 @@ function handleMouseOut(container) {
 
     let button2 = container.querySelector(".fp-btn-secondary");
     button2.classList.remove("fp-btn-secondary-mouseover");  // Slide and hide the button 2
+
+    let techList = container.querySelector(".tech-list");
+    techList.classList.remove("tech-list-mouseover");  // Slide and hide the tech list
+
+    let techBadges = container.querySelectorAll(".tech-badge");
+    techBadges.forEach(badge => {
+        badge.classList.remove("tech-badge-mouseover");  // Slide and hide each tech badge    
+    });
 }
 

@@ -36,6 +36,11 @@
                                     <small class="fp-date">
                                         <strong>Completed:</strong> {{project.date_completed|date:"M Y"}}
                                     </small>
+                                    <div class="tech-list">
+                                        {% for tech in project.technologies_used.all %}
+                                            <img class="tech-badge" src="{{tech.badge.url}}" alt="{{tech}} badge">
+                                        {% endfor %}
+                                    </div>
                                     <a class="fp-btn" href="#">See More</a>
                                     <a class="fp-btn-secondary" href="{{project.repository_link}}" target="_blank">GitHub</a>
                                 </div>
