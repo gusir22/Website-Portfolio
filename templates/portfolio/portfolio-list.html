@@ -41,7 +41,7 @@
                                             <img class="tech-badge" src="{{tech.badge.url}}" alt="{{tech}} badge">
                                         {% endfor %}
                                     </div>
-                                    <a class="fp-btn" href="#">See More</a>
+                                    <a class="fp-btn" href="{% url 'featured_project_detail' project.slug %}">See More</a>
                                     <a class="fp-btn-secondary" href="{{project.repository_link}}" target="_blank">GitHub</a>
                                 </div>
                             </div>
@@ -57,7 +57,7 @@
                     <div class="row">
                         {% for project in quick_projects %}
                             <div class="col-12">
-                                <h4>{{ project.title }}</h4>
+                                <h4><a href="{% url 'quick_project_detail' project.slug %}">{{ project.title }}</a></h4>
 
 
                                 <!-- Quick Projects Fields
