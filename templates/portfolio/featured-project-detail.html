@@ -1,1 +1,10 @@
-<h1>{{project}}</h1>
+<!-- templates/pages/portfolio/featured-project-detail.html -->
+{% extends "_base.html" %}
+{% load static %}
+
+{% block title %}{{project.title}}{% endblock title %}
+
+
+{% block content %}
+    {{project}}
+{% endblock content %}
