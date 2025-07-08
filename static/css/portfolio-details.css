@@ -12,7 +12,7 @@
     margin-top: 20px;
 }
 
-.detail-header {
+.detail-header, .masonry-header {
     border-top-style: dotted;
     border-top-width: 3px;
     border-top-color: gray;
@@ -20,6 +20,7 @@
 }
 
 .badges-section {
+    padding: 20px 0;
     padding-left: 30px;
 }
 
@@ -38,4 +39,26 @@
     height: 80px;
     width: auto;
     display: inline;
+}
+
+#masonry-screenshots-section {
+    margin-top: 30px;
+}
+
+.masonry-gallery {
+    margin: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.masonry-header {
+    margin-bottom: 10px;
+}
+
+.masonry-img {
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);  /* very subtle shadow
 }

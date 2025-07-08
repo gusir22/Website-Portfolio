@@ -55,5 +55,22 @@
                 </div>
             {% endif %}
         </div>
+
+        <!-- Screenshots Gallery -->
+        {% if project.screenshots.all %}
+            <div class="row" id="masonry-screenshots-section">
+                <div class="col-12">
+                    <h3 class="masonry-header">Screnshot Gallery</h4>
+                </div>
+                
+                <div class="col-12">
+                    <div class="masonry-gallery">
+                        {% for screenshot in project.screenshots.all %}
+                            <img class="masonry-img" src="{{ screenshot.image.url }}" alt="{{screenshot.caption}}">
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
     </div>
 {% endblock %} 
