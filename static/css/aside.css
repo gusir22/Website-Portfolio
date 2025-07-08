@@ -16,6 +16,7 @@ aside {
     border-bottom-style: dotted;
     border-bottom-color: var(--gray);
     border-bottom-width: 3px;
+    width: fit-content;
 }
 
 .section-header {

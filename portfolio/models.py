@@ -24,8 +24,8 @@ class FeaturedProject(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
     repository_link = models.URLField(blank=True)
-    date_completed = models.DateField()
-    date_created = models.DateTimeField(auto_now_add=True)  # Saves the date when the project is created
+    date_completed = models.DateField(blank=True, null=True)
+    date_created = models.DateField(auto_now_add=True)  # Saves the date when the project is created
     thumbnail = models.ImageField(upload_to='featured_projects/thumbnails/')
     slug = models.SlugField(unique=True)  # For URL reference
     technologies_used = models.ManyToManyField(Technology, related_name='featured_projects')

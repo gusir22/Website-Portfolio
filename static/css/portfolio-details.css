@@ -1,0 +1,41 @@
+.fp-hero-thumbnail {
+    width: 100%;
+    height: auto;
+}
+
+.project-date-text {
+    font-style: italic;
+    color: gray;
+}
+
+#info-section {
+    margin-top: 20px;
+}
+
+.detail-header {
+    border-top-style: dotted;
+    border-top-width: 3px;
+    border-top-color: gray;
+    padding-top: 5px;
+}
+
+.badges-section {
+    padding-left: 30px;
+}
+
+.badge-header {
+    font-style: italic;
+    color: gray;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.badges-card{
+    padding-left: 60px;
+}
+
+.detail-tech-badge {
+    height: 80px;
+    width: auto;
+    display: inline;
+}

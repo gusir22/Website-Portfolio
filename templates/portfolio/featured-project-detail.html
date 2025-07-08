@@ -11,6 +11,49 @@
             <div class="col-12">
                 <h2 class="section-title">{{project.title}}</h2>
             </div>
+            
+            <div class="col-12">
+                <p class="project-date-text">
+                    {% if project.date_completed %}
+                        Completed: {{ project.date_completed }}
+                    {% else %}
+                        Published: {{ project.date_created }}
+                    {% endif %}
+                </p>
+            </div>
+
+            <!-- Thumbnail Image -->
+            {% if project.thumbnail %}
+                <div class="col-12">
+                    <img class="fp-hero-thumbnail" src="{{ project.thumbnail.url }}" alt="{{ project.title }} thumbnail">
+                </div>
+            {% endif %}
+        </div>
+        <div class="row" id="info-section">
+            <!-- Description -->
+            <div class="col-12">
+                <h3 class="detail-header">Project Details</h4>
+                <p>{{ project.description }}</p>
+            </div>
+            <div class="col-12">
+                <div class="badges-section">
+                    <h4 class="badge-header">Languages or Frameworks Used</h4>
+                    <div class="badges-card">
+                        {% for tech in project.technologies_used.all %}
+                            <img class="detail-tech-badge" src="{{tech.badge.url}}" alt="{{tech}} badge"
+                            title="{{tech.name}}">
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <!-- Repository Link -->
+            {% if project.repository_link %}
+                <div class="col-12">
+                    <a href="{{ project.repository_link }}" target="_blank" class="btn">
+                        🔗 View on GitHub
+                    </a>
+                </div>
+            {% endif %}
         </div>
     </div>
 {% endblock %} 
