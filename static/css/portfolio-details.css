@@ -19,6 +19,10 @@
     padding-top: 5px;
 }
 
+.project-description-text {
+    text-indent: 16px;
+}
+
 .badges-section {
     padding: 20px 0;
     padding-left: 30px;
@@ -60,5 +64,39 @@
     width: 100%;
     display: block;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);  /* very subtle shadow
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);  /* very subtle shadow */
+    transition: transform 0.3s ease;
+}
+
+.masonry-img:hover {
+    transform: scale(1.08);
+    cursor: pointer;  /* give user hint that they can click the img */
+}
+
+#gallery-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    cursor: default;  /* sets cursor to default when over img */
+}
+
+#gallery-modal-text {
+    font-size: 20px;
+    color: white;
+}
+
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default, activated by modals */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.95); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
 }
