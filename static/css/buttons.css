@@ -11,6 +11,12 @@
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.fp-btn {
+    margin: 15px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .btn-secondary, .fp-btn-secondary {
