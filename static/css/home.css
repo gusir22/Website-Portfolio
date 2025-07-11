@@ -2,3 +2,21 @@
     margin: 0;
     padding: 0;
 }
+
+.cta-container {
+    display: flex;
+    justify-content: center;
+}
+
+.cta-divider {
+    border-bottom: 3px dotted gray;
+    margin: 25px 50px;
+}
+
+.more-header {
+    margin-top: 25px;
+}
+
+#book-header {
+    margin: 25px 0;
+}

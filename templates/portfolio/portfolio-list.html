@@ -49,7 +49,7 @@
                             <div class="qp-column">
                                 <ul class="qp-list">
                                     {% for project in quick_projects %}
-                                        <a href="{{ project.get_absolute_url }}" class="qp-card">
+                                        <a href="{% url 'quick_project_detail' project.slug %}" class="qp-card">
                                             <img class="qp-card-img" src="{{ project.thumbnail.url }}" alt="{{ project.name }} logo">
                                             <div>
                                                 <h4 class="qp-card-text">{{ project.title }}</h4>

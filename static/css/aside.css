@@ -24,7 +24,7 @@ aside {
     font-weight: 400;
 }
 
-#links-list {
+.links-list {
     list-style-type: square;
     padding-left: 18px;
 }
