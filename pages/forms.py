@@ -11,7 +11,7 @@ class ContactForm(forms.Form):
         label="First Name",
         max_length=50,
         widget=forms.TextInput(attrs={
-            "class": "first-name-input",
+            "id": "first-name-input",
         })
     )
 
@@ -20,7 +20,7 @@ class ContactForm(forms.Form):
         label="Last Name",
         max_length=50,
         widget=forms.TextInput(attrs={
-            "class": "last-name-input",
+            "id": "last-name-input",
         })
     )
 
@@ -29,7 +29,7 @@ class ContactForm(forms.Form):
         max_length=65,
         required=False,
         widget=forms.TextInput(attrs={
-            "class": "company-input",
+            "id": "company-input",
         })
     )
 
@@ -42,7 +42,7 @@ class ContactForm(forms.Form):
              RegexValidator(r'\d{3}-\d{3}-\d{4}', "Please use xxx-xxx-xxxx format."),
         ],
         widget=forms.TextInput(attrs={
-            "class": "phone-number-input",
+            "id": "phone-number-input",
         })
     )
 
@@ -50,7 +50,7 @@ class ContactForm(forms.Form):
         label="Email Address",
         help_text="Please enter the email you would like me to reply to.",
         widget=forms.EmailInput(attrs={
-            "class": "custom-input",
+            "id": "email-input",
         })
     )
 
@@ -58,16 +58,16 @@ class ContactForm(forms.Form):
         required=True,
         max_length=75,
         widget=forms.TextInput(attrs={
-            "class": "subject-input",
+            "id": "subject-input",
         })
     )
 
     message = forms.CharField(
         required=True,
         widget=forms.Textarea(attrs={
-            "class": "textarea-input",
+            "id": "textarea-input",
             "placeholder": "Write me here!",
-            "rows": 5
+            "rows": 5,
         })
     )
 
