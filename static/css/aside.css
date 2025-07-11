@@ -50,3 +50,18 @@ aside {
     margin-top: 0;
     color: var(--primary);
 }
+
+.email-link, .email-link:active {
+    text-decoration: none;  /* remove underlink */
+    /* replicate p tag style to blend in */
+    margin: 16px 0;
+    font-style: normal;
+    box-sizing: border-box;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+
+}

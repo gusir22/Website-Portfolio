@@ -20,7 +20,7 @@ footer {
     margin-bottom: 2px;
 }
 
-.footer-link {
+.footer-link, .footer-link:active {
     font-size: 80%;
     font-weight: 300;
     color: var(--white);
