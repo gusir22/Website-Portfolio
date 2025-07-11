@@ -13,7 +13,7 @@ function openGalleryModal (img) {
     modalHTML = `
         <div id="gallery-modal">
             <div id="gallery-img-container">
-                <img src="${img.src}" alt="${img.alt}" height="700px" width="auto">
+                <img src="${img.src}" alt="${img.alt}" id="gallery-img">
             </div>
             <p id="gallery-modal-text">${img.alt}</p>
         </div>

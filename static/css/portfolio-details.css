@@ -84,6 +84,11 @@
     cursor: default;  /* sets cursor to default when over img */
 }
 
+#gallery-img {
+    height: 80vh;
+    width: auto;
+}
+
 #gallery-modal-text {
     font-size: 20px;
     color: white;
