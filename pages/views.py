@@ -10,6 +10,7 @@ from django.urls import reverse_lazy
 from education_certificates.models import Certificate
 
 from .forms import ContactForm
+from .models import Book
 
 
 class HomePageView(TemplateView):
@@ -18,6 +19,7 @@ class HomePageView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['custom_context'] = "I am a custom context str!"  # add custom context data here
+        context['book_list'] = Book.objects.all()  # get all book instances for table
         return context
 
 

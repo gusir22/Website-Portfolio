@@ -55,18 +55,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr onclick="window.open('https://nostarch.com/python-crash-course-3rd-edition', '_blank');">
-                            <td>Python Crash Course</td>
-                            <td>Eric Matthes</td>
-                            <td>Python</td>
-                            <td>My intro to Python and Django</td>
-                        </tr>
-                        <tr onclick="window.open('https://learndjango.com/courses/django-for-beginners/', '_blank');">
-                            <td>Django for Beginners</td>
-                            <td>William S Vincent</td>
-                            <td>Django</td>
-                            <td>Learned how to work with Django Framework</td>
-                        </tr>
+                        {% for book in book_list %}
+                            <tr onclick="window.open('{{book.book_link}}', '_blank');">
+                                <td>{{book.title}}</td>
+                                <td>{{book.author}}</td>
+                                <td>{{book.topic}}</td>
+                                <td>{{book.notes}}</td>
+                            </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
