@@ -11,11 +11,30 @@
                 <h2 id="home-header">Thank you for reaching out</h2>
             </div>
             <div class="col-12">
-                <p>
+                <p class="text-indented">
                     I just wanted you to know that your message is in route and I will get back to you. Thank you for
                     reaching out to me and being a guest on my website. While you wait, please feel free to explore my
                     portfolio. It is full of projects I have contributed to and think you should see!
                 </p>
+            </div>
+            <div class="col-12">
+                <div class="cta-divider"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <ul class="links-list">
+                    <li class="links-item">
+                        <a class="links-link" href="{% url 'home' %}">Back to the Start &#127968;</a>
+                    </li>
+                    <li class="links-item">
+                        <a class="links-link" href="{% url 'about' %}">More About Me &#128102;&#127995;</a>
+                    </li>
+                    <li class="links-item">
+                        <a class="links-link" href="{% url 'portfolio_list' %}">See My Work &#128188;</a>
+                    </li>
+                    <!-- Add link to download resume from here -->
+                </ul>
             </div>
         </div>
     </div>
