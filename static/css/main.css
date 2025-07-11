@@ -10,6 +10,7 @@
 @import url("portfolio-details.css");
 @import url("portfolio-list.css");
 @import url("buttons.css");
+@import url("table.css");
 
 :root {
     --black: #242124;

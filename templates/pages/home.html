@@ -28,6 +28,59 @@
                     Let’s build something great together!
                 </p>
             </div>
+            <div class="col-12">
+                <div class="cta-container">
+                    <a class="cta-btn" href="{% url 'contact' %}">Let's Connect!</a>
+                </div>
+                <div class="cta-divider"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h3 id="book-header">The Books Behind My Code</h3>
+                <p>
+                    These books have shaped the way I approach coding, problem-solving, and software design. 
+                    Whether discovered through recommendations or curiosity, each one has become a key part of my learning path. 
+                    They've helped me build a strong foundation that supports my current studies at Broward College.
+                </p>
+            </div>
+            <div class="col-12">
+                <table class="book-table">
+                    <thead>
+                        <tr>
+                            <th>Book</th>
+                            <th>Author</th>
+                            <th>Topic</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for book in book_list %}
+                            <tr onclick="window.open('{{book.book_link}}', '_blank');">
+                                <td>{{book.title}}</td>
+                                <td>{{book.author}}</td>
+                                <td>{{book.topic}}</td>
+                                <td>{{book.notes}}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h3 class="more-header">Want to learn more?</h2>
+            </div>
+            <div class="col-12">
+                <ul class="links-list">
+                    <li class="links-item">
+                        <a class="links-link" href="{% url 'about' %}">More About Me &#128102;&#127995;</a>
+                    </li>
+                    <li class="links-item">
+                        <a class="links-link" href="{% url 'portfolio_list' %}">See My Work &#128188;</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 
