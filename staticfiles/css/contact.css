@@ -75,11 +75,10 @@ small {
 }
 
 #are-you-a-robot-container {
-    margin-top: 55px;
-    margin-bottom: 15px;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 #are-you-a-robot-container label {
     display: none; /* Hide captcha label */
 }
-

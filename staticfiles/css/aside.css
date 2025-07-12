@@ -16,6 +16,7 @@ aside {
     border-bottom-style: dotted;
     border-bottom-color: var(--gray);
     border-bottom-width: 3px;
+    width: fit-content;
 }
 
 .section-header {
@@ -23,7 +24,7 @@ aside {
     font-weight: 400;
 }
 
-#links-list {
+.links-list {
     list-style-type: square;
     padding-left: 18px;
 }

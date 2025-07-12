@@ -1,0 +1,85 @@
+#fp-section, #qp-section {
+    margin: 15px 0;
+    height: 100%;
+}
+
+#fp-container {
+    margin: 0;
+    padding: 0;
+    padding-right: 30px;
+}
+
+.fp-card {
+    padding: 0;
+    margin: 0;
+    margin-top: 25px;
+    margin-bottom: 40px;
+    position: relative; /* Keeps elements positioned relative to the card */
+    transition: margin-bottom 0.5s ease;
+}
+
+.fp-thumbnail {
+    transition: filter 0.5s ease;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.fp-title {
+    margin-top: 10px;
+}
+
+.qp-column {
+    margin-top: 25px;
+    padding: 10px 0;
+    border-left: 3px dotted gray;
+    height: 100%;
+}
+
+.qp-links {
+    margin: 0;
+    padding: 0;
+}
+
+.qp-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    padding: 0 25px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+  }
+  
+  .qp-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 9px;
+    background-color: var(--white);
+    border-radius: 12px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+.qp-card-img {
+    height: 40px;
+    width: 40px;
+    border-radius: 6px;
+    object-fit: cover;
+  }
+  
+.qp-card-text {
+    font-size: 14px;
+    margin: 0;
+  }
+
+  
+  /* Hover effect */
+.qp-card:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+    transform: scale(1.02);
+    z-index: 1; /* bring it up */
+  }
