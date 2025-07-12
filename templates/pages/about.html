@@ -117,7 +117,7 @@
                 <div class="col-6">
                     <a href="{{ certificate.certificate_file.url }}" class="certificate-link" download>
                         <div class="certificate-card">
-                            <img src="{{ certificate.certificate_file.url }}" alt="{{ certificate }} Certificate" class="certificate-img">
+                            <img loading="lazy" src="{{ certificate.certificate_file.url }}" alt="{{ certificate }} Certificate" class="certificate-img">
                             <h3 class="certificate-title">{{ certificate.title }}</h3>
                             <h4 class="certificate-institution">{{ certificate.institution_name }}</h4>
                             <p class="certificate-timeframe">{{ certificate.date_earned }}</p>
