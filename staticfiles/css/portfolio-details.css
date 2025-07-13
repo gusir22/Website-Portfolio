@@ -6,7 +6,7 @@
 
 .project-date-text {
     font-style: italic;
-    color: gray;
+    color: var(--primary);
 }
 
 #info-section {
@@ -31,7 +31,7 @@
 
 .badge-header {
     font-style: italic;
-    color: gray;
+    color: var(--primary);
     font-weight: 400;
     margin-bottom: 10px;
 }
