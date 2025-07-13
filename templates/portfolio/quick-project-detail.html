@@ -44,7 +44,7 @@
                     <h4 class="badge-header">Languages or Frameworks Used</h4>
                     <div class="badges-card">
                         {% for tech in project.technologies_used.all %}
-                            <img class="detail-tech-badge" src="{{tech.badge.url}}" alt="{{tech}} badge"
+                            <img loading="lazy" class="detail-tech-badge" src="{{tech.badge.url}}" alt="{{tech}} badge"
                             title="{{tech.name}}">
                         {% endfor %}
                     </div>
