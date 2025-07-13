@@ -22,7 +22,8 @@
 }
 
 * {
-    font-family: "Montserrat", serif;
+    /* backup fonts match Montserrat to reduce visual shift for CLS score*/
+    font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     font-style: normal;
     box-sizing: border-box;
     color: var(--black);
