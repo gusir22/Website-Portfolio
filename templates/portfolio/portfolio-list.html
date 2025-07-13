@@ -34,7 +34,8 @@
                         {% for project in featured_projects %}
                             <div class="col-12">
                                 <div class="fp-card">
-                                    <img class="fp-thumbnail" src="{{project.thumbnail.url}}" alt="{{project.title}} thumbnail">
+                                    <img class="fp-thumbnail" src="{{project.thumbnail.url}}" alt="{{project.title}} thumbnail"
+                                    width="{{ project.thumbnail.width }}" height="{{ project.thumbnail.height }}">
                                     <h3 class="fp-title">{{ project.title }}</h3>
                                     <a class="fp-btn" href="{% url 'featured_project_detail' project.slug %}">More Details</a>
                                 </div>
@@ -54,7 +55,8 @@
                                 <ul class="qp-list">
                                     {% for project in quick_projects %}
                                         <a href="{% url 'quick_project_detail' project.slug %}" class="qp-card">
-                                            <img class="qp-card-img" src="{{ project.thumbnail.url }}" alt="{{ project.name }} logo">
+                                            <img class="qp-card-img" src="{{ project.thumbnail.url }}" alt="{{ project.name }} logo"
+                                            width="{{ project.thumbnail.width }}" height="{{ project.thumbnail.height }}">
                                             <div>
                                                 <h4 class="qp-card-text">{{ project.title }}</h4>
                                             </div>

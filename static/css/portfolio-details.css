@@ -62,9 +62,15 @@
     margin-bottom: 10px;
 }
 
+.masonry-img-container {
+    max-height: fit-content;
+    width: auto;
+    display: block;
+}
+
 .masonry-img {
     width: 100%;
-    display: block;
+    height: auto;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);  /* very subtle shadow */
     transition: transform 0.3s ease;
@@ -84,8 +90,13 @@
     cursor: default;  /* sets cursor to default when over img */
 }
 
+#gallery-img-container {
+    height: 75vh;
+    width: auto;
+}
+
 #gallery-img {
-    height: 80vh;
+    height: 100%;
     width: auto;
 }
 

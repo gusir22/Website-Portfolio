@@ -1,0 +1,13 @@
+TODO: Lighthouse Optimization for Portfolio
+
+- Set explicit width and height attributes on all <img> tags in HTML.
+  Example: <img src="..." width="400" height="300">
+  This prevents layout shifts and improves CLS (Cumulative Layout Shift) score.
+
+- Make all images and layouts responsive using CSS.
+  Example:
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  This ensures images scale correctly on all screen sizes and keeps layout stable.
