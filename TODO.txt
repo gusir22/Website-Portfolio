@@ -1,0 +1,9 @@
+TODO:
+
+- Make all images and layouts responsive using CSS.
+  Example:
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  This ensures images scale correctly on all screen sizes and keeps layout stable.

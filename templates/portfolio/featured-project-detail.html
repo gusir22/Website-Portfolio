@@ -29,7 +29,8 @@
             <!-- Thumbnail Image -->
             {% if project.thumbnail %}
                 <div class="col-12">
-                    <img class="fp-hero-thumbnail" src="{{ project.thumbnail.url }}" alt="{{ project.title }} thumbnail">
+                    <img class="fp-hero-thumbnail" src="{{ project.thumbnail.url }}" alt="{{ project.title }} thumbnail"
+                    width="{{ project.thumbnail.width }}" height="{{ project.thumbnail.height }}">
                 </div>
             {% endif %}
         </div>
@@ -45,7 +46,7 @@
                     <div class="badges-card">
                         {% for tech in project.technologies_used.all %}
                             <img loading="lazy" class="detail-tech-badge" src="{{tech.badge.url}}" alt="{{tech}} badge"
-                            title="{{tech.name}}">
+                            title="{{tech.name}}" width="{{ tech.badge.width }}" height="{{ tech.badge.height }}">
                         {% endfor %}
                     </div>
                 </div>
@@ -70,8 +71,10 @@
                 <div class="col-12">
                     <div class="masonry-gallery">
                         {% for screenshot in project.screenshots.all %}
-                            <img loading="lazy" class="masonry-img" src="{{ screenshot.image.url }}" alt="{{screenshot.caption}}"
-                            onclick="openGalleryModal(this)">
+                            <div class="masonry-img-container">
+                                <img loading="lazy" class="masonry-img" src="{{ screenshot.image.url }}" alt="{{screenshot.caption}}"
+                                    width="{{ screenshot.image.width }}" height="{{ screenshot.image.height }}" onclick="openGalleryModal(this)">
+                            </div>
                         {% endfor %}
                     </div>
                 </div>
