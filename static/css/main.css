@@ -11,6 +11,7 @@
 @import url("portfolio-list.css");
 @import url("buttons.css");
 @import url("table.css");
+@import url("footer.css");
 
 :root {
     --black: #242124;
@@ -55,6 +56,11 @@ main {
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
+}
+
+.text-indented {
+    text-indent: 16px;
+    text-align: justify;
 }
 
 .section-title-emphasis {

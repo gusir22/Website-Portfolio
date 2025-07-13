@@ -9,7 +9,11 @@ label {
     font-size: 115%;
 }
 
-input, textarea {
+#first-name-input, #last-name-input,
+#company-input, #phone-number-input,
+#email-input, #subject-input,
+#textarea-input {
+    display: block;
     width: 100%;
     border: none;
     border-bottom-style: dotted;
@@ -24,7 +28,7 @@ input, textarea {
     transition: border-color 0.3s ease;
 }
 
-textarea {
+#textarea-input {
     /* make font smaller for better readability*/
     font-size: 18px;
     font-weight: 400;
@@ -32,8 +36,11 @@ textarea {
 }
 
 /* When input is focused, highlight the border */
-input:focus, textarea:focus {
-    border-bottom-color: var(--primary); /* Change to preferred accent color */
+#first-name-input:focus, #last-name-input:focus,
+#company-input:focus, #phone-number-input:focus,
+#email-input:focus, #subject-input:focus,
+#textarea-input:focus {
+    border-bottom-color: var(--primary); /* Change to focused accent color */
 }
 
 small {
@@ -51,27 +58,35 @@ small {
 #email-address-container, #subject-container,
 #message-container {
     display: inline-block;
-    width: 40%;
+    width: 100%;
     padding: 0;
     margin: 30px 0;
     margin-right: 5%;
 }
 
-#company-container {
-    width: 55%;
-    margin-right: 40%;
+#first-name-input, #last-name-input {
+    width: 75%;
 }
 
-#phone-number-container {
-    width: 30%;
+#company-input {
+    width: 60%;
+    
 }
 
-#email-address-container {
-    width: 50%;
+#phone-number-input {
+    width: 60%;
 }
 
-#message-container {
-    width: 85%;
+#email-input {
+    width: 90%;
+}
+
+#subject-input {
+    width: 65%;
+}
+
+#textarea-input {
+    width: 90%;
 }
 
 #are-you-a-robot-container {
@@ -81,4 +96,16 @@ small {
 
 #are-you-a-robot-container label {
     display: none; /* Hide captcha label */
+}
+
+
+/* Im trying to make the phone number and email containers to take the same
+row until small screens. I need to revisit the problem from here */
+
+#phone-number-container {
+    width: 45%;
+}
+
+#email-address-container {
+    width: 55%;
 }

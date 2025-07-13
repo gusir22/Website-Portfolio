@@ -22,6 +22,7 @@
 
 .project-description-text {
     text-indent: 16px;
+    text-align: justify;
 }
 
 .badges-section {
@@ -81,6 +82,11 @@
     transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
     cursor: default;  /* sets cursor to default when over img */
+}
+
+#gallery-img {
+    height: 80vh;
+    width: auto;
 }
 
 #gallery-modal-text {
