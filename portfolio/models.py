@@ -16,9 +16,6 @@ class Technology(models.Model):
         return self.name
 
 
-
-
-
 # Featured Project Model
 class FeaturedProject(models.Model):
     title = models.CharField(max_length=200)
@@ -41,6 +38,20 @@ class FeaturedProject(models.Model):
         if not self.slug:
             self.slug = slugify(self.title)
         super().save(*args, **kwargs)
+
+    def meta_description(self):
+        """This method auto-generates the detail pages meta descrition content for SEO"""
+        tech_list = [t.name for t in self.technologies_used.all()] # get all tech names as a list
+        # format tech list into string
+        if len(tech_list) > 1:
+            tech_list[-1] = "and " + tech_list[-1]  # add 'and' to last tech in list if more than one item
+
+        if len(tech_list) <= 2:
+            tech_list = " ".join(tech_list)  # join tech list into string with just a space bar
+        else:
+            tech_list = ", ".join(tech_list)  # join tech list into string with commas and a space
+        short_desc = self.description.split(".")[0]  # first sentence
+        return f"{self.title} built with {tech_list}. {short_desc}"
 
 
 # Screenshot Model for Multiple Images
@@ -76,3 +87,16 @@ class QuickProject(models.Model):
             self.slug = slugify(self.title)
         super().save(*args, **kwargs)
 
+    def meta_description(self):
+        """This method auto-generates the detail pages meta descrition content for SEO"""
+        tech_list = [t.name for t in self.technologies_used.all()] # get all tech names as a list
+        # format tech list into string
+        if len(tech_list) > 1:
+            tech_list[-1] = "and " + tech_list[-1]  # add 'and' to last tech in list if more than one item
+
+        if len(tech_list) <= 2:
+            tech_list = " ".join(tech_list)  # join tech list into string with just a space bar
+        else:
+            tech_list = ", ".join(tech_list)  # join tech list into string with commas and a space
+        short_desc = self.description.split(".")[0]  # first sentence
+        return f"{self.title} built with {tech_list}. {short_desc}"
