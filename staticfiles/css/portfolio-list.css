@@ -50,8 +50,14 @@
     padding-top: 10px;
     padding-bottom: 30px;
   }
-  
-  .qp-card {
+
+.qp-list-lineitem {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.qp-card {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -62,7 +68,7 @@
     color: inherit;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
-  }
+}
   
 .qp-card-img {
     height: 40px;
